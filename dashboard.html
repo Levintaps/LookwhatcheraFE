@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookwhatchera</title>
+    <link rel="icon" href="images/Logo.png" type="images/x-icon"/>
+    <link rel="stylesheet" href="style/style.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="dashHead">
+        <h1>Lookwhatchera</h1>
+        <div class="user-info">
+            <span>Hi, Poby!</span>
+            <img src="images/Avatar.png" alt="Avatar">
+        </div>
+    </div>
+
+    <!-- CONTAINER LIST-->
+    <div class="container">
+        <div class="containerLeft">
+            <p><b>Tourist Attractions</b></p>
+            <h3 id="antipolo" onclick="showPlaces('antipolo')">Antipolo</h3>
+            
+            <div id="antipoloPlaces" class="places">
+                <ul id="antipoloList">
+                <!-- Antipolo places will appear here -->
+                </ul>
+            </div>
+        
+            <h3 id="marikina" onclick="showPlaces('marikina')">Marikina</h3>
+            
+            <div id="marikinaPlaces" class="places">
+                <ul id="marikinaList">
+                <!-- Marikina places will appear here -->
+                </ul>
+            </div>
+
+            <h3 id="pasig" onclick="showPlaces('pasig')">Pasig</h3>
+            
+            <div id="pasigPlaces" class="places">
+                <ul id="pasigList">
+                <!-- Pasig places will appear here -->
+                </ul>
+            </div>
+
+            <h3 id="taguig" onclick="showPlaces('taguig')">Taguig</h3>
+            
+            <div id="taguigPlaces" class="places">
+                <ul id="taguigList">
+                <!-- Taguig places will appear here -->
+                </ul>
+            </div>
+
+            <h3 id="manila" onclick="showPlaces('manila')">Manila</h3>
+            
+            <div id="manilaPlaces" class="places">
+                <ul id="manilaList">
+                <!-- Manila places will appear here -->
+                </ul>
+            </div>
+        </div>
+        <!-- Right Div: Contains top and bottom sections -->
+        <div class="containerRight">
+            <div class="top-right">
+                <!--<h3>MAPS</h3>-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247029.25092244378!2d121.08089602746705!3d14.66547104094236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397bf0c8d8310c5%3A0x34dc8e5a7fbf80a3!2sAntipolo%2C%20Rizal!5e0!3m2!1sen!2sph!4v1736158443018!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" class="iframe-content"></iframe>
+            </div>
+            <div class="bottom-right">
+                <div class="chat-header">
+                    Chatbot
+                </div>
+                <div class="chat-body">
+                    <div class="message bot">
+                        <div class="message-content">Hello! How can I help you today?</div>
+                    </div>
+                </div>
+                <div class="chat-footer">
+                    <input type="text" class="chat-input" placeholder="Type your message here...">
+                    <button class="send-button">&#9658;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Js/destination.js"></script>
+    
+    <div class="containerRight">
+        
+    </div>
+    
+
+    
+</body>
+</html>
