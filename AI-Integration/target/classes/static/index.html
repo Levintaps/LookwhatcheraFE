@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Generator</title>
+</head>
+<body>
+<h1>AI TAPS</h1>
+<textarea id="promptInput" placeholder="Enter prompt"></textarea><br>
+<button onclick="generateContent()">Generate Content</button>
+<div id="responseContainer"></div>
+
+<script>
+    function generateContent() {
+        const prompt = document.getElementById('promptInput').value.trim();
+
+        if (prompt === '') {
+            alert('Please enter a prompt.');
+            return;
+        }
+
+        fetch('https://f536-120-28-110-13.ngrok-free.app/api/gemini/generate-content', {  // Backend URL
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt })
+        })
+        .then(response => response.text())  // Get plain text response
+        .then(data => {
+            document.getElementById('responseContainer').innerText = data;
+        })
+        .catch(error => {
+            document.getElementById('responseContainer').innerText = "Error: " + error;
+        });
+    }
+</script>
+</body>
+</html>
