@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 html, body {
-    height: 100%;
+    max-height: 100%;
     max-width: 100%;
 }
 
@@ -30,7 +30,7 @@ form {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px; /* Maximum width of the form */
+    max-width: 400px;
 }
 
 h4 {
@@ -47,7 +47,7 @@ h4 {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    box-sizing: border-box; /* Ensures padding is inside the width */
+    box-sizing: border-box;
 }
 
 .eye-icon {
@@ -101,18 +101,18 @@ h4 {
 }
 
 .textBtn  {
-    background-color: transparent; /* Keep background transparent */
-    border: none; /* Remove border */
-    color: white; /* Button text color */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Hand cursor */
-    text-decoration: none; /* No underline */
-    width: 100%; /* Make the button fill the container */
-    height: 100%; /* Fill the container height */
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Match the container's rounded corners */
+    border-radius: 10px;
 }
 
 .textBtn:hover {
@@ -160,11 +160,12 @@ h4 {
     width: 100vw;
     height: 100vh;
     max-width: 100%;
+    max-height: 100%;
 }
 .containerLeft {
     flex: 1;
     padding: 10px;
-    overflow-y: auto; /* Enables scrolling if content overflows */
+    overflow-y: auto;
 }
 .containerLeft p {
     color: #000000;
@@ -230,17 +231,18 @@ h3 {
 
 /* CONTAINER RIGHT */
 .containerRight {
-    flex: 2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     background-color: rgb(48, 47, 47);
     border-radius: 30px;
-    padding: 5px;
+    padding: 3px;
 }
 
 .top-right, .bottom-right {
     flex: 1;
     background-color: lightblue;
+    max-height: 50%;
     margin: 10px;
     padding: 10px;
 }
@@ -250,13 +252,24 @@ h3 {
     margin-bottom: 0;
 }
 
+/* TOP RIGHT - MAPS */
 .iframe-content {
     width: 100%;
     height: 100%;
     background-color: white;
 }
 
-/* CHATBOT */
+
+/* BOTTOM RIGHT - CHATBOT */
+.chat-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
 
 .chat-header {
     background-color: #007bff;
@@ -266,12 +279,15 @@ h3 {
     text-align: center;
 }
 .chat-body {
-    flex: 1;
+    flex: 1; /* This makes the chat body take up remaining space */
     padding: 15px;
     overflow-y: auto;
-    background-color: #f1f1f1;
+    background-color: #5c5656;
+    min-height: 0; /* Allows the flex container to scroll properly */
 }
 .message {
+    margin-left: 10px;
+    margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
 }
@@ -299,6 +315,7 @@ h3 {
     padding: 10px;
     background-color: #fff;
     border-top: 1px solid #ccc;
+    margin-top: 0;
 }
 .chat-input {
     flex: 1;

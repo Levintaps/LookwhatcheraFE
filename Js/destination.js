@@ -7,47 +7,13 @@ function showPlaces(city) {
     // Define the places, their descriptions, and images for each city
     const cityPlaces = {
         antipolo: [
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
-        { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
-        { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' },
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
+        { name: 'Pinto Art Museum', description: 'The Pinto Art Museum is a beautiful contemporary space for art enthusiasts, fans of Greek architecture, and lovers of nature. Located in a 1.2 hectare property in Antipolo, Rizal, it has become become popular for its artsy, cool vibe, as well as its Instagram-ready facade.', image: ['images/Pinto_Art_Museum.jpg', 'images/Pinto_Art_Museum2.jpg'] },
         { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
         { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' }
-
         ],
         marikina: [
         { name: 'Sport Center', description: 'A facility for various sports activities and events.', image: 'sport-center-image.jpg' },
-        { name: 'River Opark', description: 'A park by the river with scenic views and walking trails.', image: 'river-opark-image.jpg' }
+        { name: 'River park', description: 'A park by the river with scenic views and walking trails.', image: 'river-opark-image.jpg' }
         ],
         pasig: [
         { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
@@ -66,36 +32,32 @@ function showPlaces(city) {
         ]
     };
 
-    // Add the list of places for the selected city
     placesList.innerHTML = cityPlaces[city].map(place => 
         `<li onclick="toggleDescription('${place.name}', '${city}')">${place.name}</li>`
     ).join('');
 
-    // If a city is currently shown, hide its places
+
     if (currentCity && currentCity !== city) {
-        document.getElementById(`${currentCity}Places`).style.display = 'none';  // Hide the previously visible city
+        document.getElementById(`${currentCity}Places`).style.display = 'none';
     }
 
-    // Toggle visibility for the clicked city
     if (placesDiv.classList.contains("show")) {
         placesDiv.classList.remove("show");
-        placesDiv.style.display = "none";  // Hide the city places when clicked again
+        placesDiv.style.display = "none";
     } else {
-        placesDiv.style.display = "block"; // Show the city places
+        placesDiv.style.display = "block";
         setTimeout(() => {
         placesDiv.classList.add("show");
-        }, 10);  // Small delay to trigger the animation
+        }, 10);
     }
 
-    // Update the currentCity to the city clicked
     currentCity = city;
     }
 
-    // Function to toggle descriptions and hide other descriptions
     function toggleDescription(placeName, city) {
     const cityPlaces = {
         antipolo: [
-        { name: 'Home', description: 'This is the place where you can relax and spend quality time with family.', image: 'home-image.jpg' },
+        { name: 'Pinto Art Museum', description: 'The Pinto Art Museum is a beautiful contemporary space for art enthusiasts, fans of Greek architecture, and lovers of nature. Located in a 1.2 hectare property in Antipolo, Rizal, it has become become popular for its artsy, cool vibe, as well as its Instagram-ready facade.', image: ['images/Pinto_Art_Museum.jpg', 'images/Pinto_Art_Museum2.jpg'] },
         { name: 'School', description: 'A place of learning and education.', image: 'school-image.jpg' },
         { name: 'Market', description: 'A local market where fresh goods and produce are sold.', image: 'market-image.jpg' }
         ],
